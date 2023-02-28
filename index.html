@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Метод шести глечиків</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Метод шести глечиків</h1>
+    </header>
+    <main class="main">
+      <form class="form">
+        <div class="form-steps">
+          <ul class="steps">
+            <li class="step active" data-target="#info"></li>
+            <li class="step" data-target="#categories"></li>
+            <li class="step" data-target="#income"></li>
+            <li class="step" data-target="#results"></li>
+          </ul>
+        </div>
+        <div class="form-main tabs">
+          <div class="info active" id="info">
+            <div class="info-text">
+              <p class="info-text-content">
+                «Метод шести глечиків», або «Правило глечиків» (англ. 6 Jars
+                Budgeting Method), — одна з варіацій класичного методу конвертів
+                для складання бюджету.
+              </p>
+              <p class="info-text-content">
+                Цю систему управління капіталом описав Т. Харв Екер у своїй
+                книзі «Думай як мільйонер».
+              </p>
+              <p class="info-text-content">
+                Суть даного методу полягає у розподілі всіх доходів за шістьма
+                категоріями (глечиками), кожен з яких відповідає за свою статтю
+                витрат.
+              </p>
+            </div>
+          </div>
+          <div class="categories-wrapper" id="categories">
+            <ul class="categories" onchange="getRates()">
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="nec" />
+                </div>
+                <h4 class="category-title">
+                  1-й глечик. Необхідні або поточні витрати (Necessity Account,
+                  NEC)
+                </h4>
+                <div class="category-rate" id="nec">55%</div>
+                <div class="category-description">
+                  <p>
+                    У цьому глечику є гроші на поточні витрати: продукти,
+                    комунальні платежі, кредити, ліки, проїзд, медицина тощо.
+                    Здебільшого це все предмети першої необхідності.
+                  </p>
+                </div>
+              </li>
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="play" />
+                </div>
+                <h4 class="category-title">
+                  2-й глечик. Рахунок розваг (Play Account, PLAY)
+                </h4>
+                <div class="category-rate" id="play">10%</div>
+                <div class="category-description">
+                  <p>
+                    Гроші з цього глечика витрачати з метою піклування про себе.
+                    Здійснювати покупки, які зазвичай не робите. На гроші з
+                    цього глечика можна сходити на масаж, у картинг-клуб, на
+                    концерт або вирушити на вихідні. Побалуйте себе, принесіть
+                    собі задоволення без докору сумління за надміру витрачені
+                    гроші.
+                  </p>
+                </div>
+              </li>
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="ffa" />
+                </div>
+                <h4 class="category-title">
+                  3-й глечик. Рахунок фінансової свободи (Financial Freedom
+                  Account, FFA)
+                </h4>
+                <div class="category-rate" id="ffa">10%</div>
+                <div class="category-description">
+                  <p>
+                    Даний глечик - це квиток до вашої фінансової свободи. Гроші
+                    з цього глечика не витрачаються за жодних умов, а
+                    використовуються для інвестицій та отримання пасивного
+                    доходу. Навіть коли ви будете фінансово вільні, витрачати
+                    можна буде лише прибуток.
+                  </p>
+                </div>
+              </li>
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="edu" />
+                </div>
+                <h4 class="category-title">
+                  4-й глечик. Освітній рахунок (Education Account, EDU)
+                </h4>
+                <div class="category-rate" id="edu">10%</div>
+                <div class="category-description">
+                  <p>
+                    З цього глечика гроші витрачаються на освіту та розвиток
+                    особистості. Інвестиції в себе та дітей — чудовий спосіб
+                    використати свої гроші. Гроші витрачаються на оплату
+                    навчання, курсів, майстер-класів, тренінгів, книг: те, що
+                    має освітню цінність. Самоосвіта дає вам більше можливостей
+                    не тільки для основної роботи, але й створення додаткових і
+                    пасивних джерел доходу.
+                  </p>
+                </div>
+              </li>
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="ltss" />
+                </div>
+                <h4 class="category-title">
+                  5-й глечик. Резервний фонд та рахунок майбутніх покупок (Long
+                  Term Saving for Spending Account, LTSS)
+                </h4>
+                <div class="category-rate" id="ltss">10%</div>
+                <div class="category-description">
+                  <p>
+                    На цьому рахунку зберігаються гроші, які можуть бути
+                    використані як фінансова подушка безпеки (резервний фонд), і
+                    як накопичення на великі витрати (відпустка, автомобіль,
+                    посудомийна машина тощо). Гроші на цьому рахунку дозволять
+                    витримати фінансові випробування, уникнути боргів та
+                    почуватися впевнено у завтрашньому дні.
+                  </p>
+                </div>
+              </li>
+              <li class="category">
+                <div class="category-check">
+                  <input type="checkbox" name="give" />
+                </div>
+                <h4 class="category-title">
+                  6-й глечик. Рахунок подарунків та благодійності (Give Account,
+                  GIVE)
+                </h4>
+                <div class="category-rate" id="give">5%</div>
+                <div class="category-description">
+                  <p>
+                    Гроші з цього глечика потрібно використовувати на цілі
+                    благодійності або на подарунки друзям, близьким, сусідам.
+                    Чим простіше Ви розлучаєтеся з грошима (не витрачаєте їх у
+                    порожню, а віддаєте, даруйте), тим швидше вони повернуться
+                    до Вас. Тим паче, робити подарунки завжди приємно.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="income" id="income">
+            <h2>Введіть Ваш дохід за цей місяць</h2>
+            <input type="number" name="income" required />
+          </div>
+          <div class="results" id="results"></div>
+        </div>
+        <div class="form-buttons">
+          <button class="form-button prev" disabled>
+            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="form-button next">
+            <i class="fa-sharp fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </main>
+    <footer class="footer">
+      Coded by <a href="https://github.com/olha-bochevar">Olha Bochevar</a>
+    </footer>
+    <script src="./scripts/fetch.js"></script>
+    <script src="./scripts/ui.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

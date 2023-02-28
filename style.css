@@ -1,0 +1,344 @@
+/* reset styles */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* html {
+  height: 100%;
+} */
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: black;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:active,
+input:focus,
+input:focus-visible {
+  outline: none;
+}
+
+input[type="reset"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html,
+body {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Comfortaa, Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*----------------------------------------*/
+:root {
+  --primary-color: #000;
+  --back-color: #fff;
+  --border: 1px solid var(--primary-color);
+
+}
+
+/* header */
+header.header {
+  padding: 5em;
+  text-align: center;
+}
+
+.header h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 150%;
+  text-transform: uppercase;
+
+}
+
+/*---------------main------------------*/
+.main {
+  /* 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; */
+  flex: 1 1 auto;
+}
+
+form {
+  width: 90vw;
+  border: var(--border);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-steps {
+  width: 100%;
+  padding: 2em;
+}
+
+ul.steps {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.step {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: var(--border);
+  position: relative;
+}
+
+.step.active {
+  background-color: var(--primary-color);
+}
+
+.form-main {
+
+  padding: 1em;
+  text-align: center;
+}
+
+.form-main>* {
+  display: none;
+}
+
+.info.active {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info-text {
+  flex: 1 1 auto;
+}
+
+.info-text-content {
+  line-height: 120%;
+  font-size: 1.2rem;
+}
+
+.info-text-content:not(:last-of-type) {
+  margin-bottom: 0.5em;
+}
+
+/*-------- categories --------*/
+.categories-wrapper.active {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.category {
+  width: 100%;
+  padding: 0.5em;
+  display: grid;
+  grid-template-areas:
+    'check title title rate'
+    'check desc desc desc';
+}
+
+.category-info {
+  display: flex;
+
+}
+
+.category-check {
+  width: 20px;
+  height: 20px;
+  margin-right: 1em;
+  grid-area: check;
+}
+
+.category-check>input {
+  width: 20px;
+  height: 20px;
+
+}
+
+.category-check>input[type='checkbox']:checked {
+  accent-color: var(--primary-color);
+}
+
+.category-title {
+  margin-bottom: 0.5em;
+  grid-area: title;
+  line-height: 120%;
+}
+
+.category-description {
+  font-size: 0.9rem;
+  grid-area: desc;
+  color: #808080;
+}
+
+.category-rate {
+  font-size: 1.5rem;
+  grid-area: rate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-change {
+  font-size: 1rem;
+  background-color: var(--back-color);
+  padding: 0.5em 0;
+  text-decoration: underline;
+  border: none;
+}
+
+.category-change i {
+  margin-right: 0.5em;
+
+}
+
+/*----------- income ------------*/
+
+.income.active {
+  display: block;
+}
+
+
+
+/*---------- results -----------*/
+
+.results.active {
+  display: block;
+}
+
+/*------ buttons -------*/
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.form-button {
+  width: 50px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  text-transform: uppercase;
+  background-color: var(--back-color);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.form-button:first-of-type {
+  margin-right: 1em;
+}
+
+button.form-button.prev:disabled,
+button.form-button.next:disabled {
+  border-color: #b7b7b7;
+}
+
+button.form-button.prev:disabled:hover,
+button.form-button.next:disabled:hover {
+  background-color: var(--back-color);
+  color: #b7b7b7;
+}
+
+.form-button:hover {
+  background-color: var(--primary-color);
+  color: var(--back-color);
+}
+
+/*---------------footer------------------*/
+footer.footer {
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
